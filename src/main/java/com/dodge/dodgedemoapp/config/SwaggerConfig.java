@@ -11,14 +11,14 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 
 
-/*@Configuration
+@Configuration
 @EnableSwagger2
-*/public class SwaggerConfig {
-   /* @Bean
+public class SwaggerConfig {
+    @Bean
     public Docket productApi() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()                 .apis(RequestHandlerSelectors.basePackage("com.dodge.dodgedemoapp.restcontroller"))
                 .paths(PathSelectors.any())
                 .build();
-    }*/
+    }
 }
