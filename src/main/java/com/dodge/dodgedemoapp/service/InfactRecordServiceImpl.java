@@ -21,22 +21,12 @@ public class InfactRecordServiceImpl implements InfactRecordService {
 
 	@Override
 	public void save(InfactRecord infactRecord) {
-		try {
-			infactRecordRepository.save(infactRecord);
-		} catch (Exception e) {
-			System.out.println("Error: " + e);
-		}
-
+		infactRecordRepository.save(infactRecord);
 	}
 
 	@Override
 	public InfactRecord get(Long recordId) {
-		try {
-			return infactRecordRepository.findByRecordId(recordId);
-		} catch (Exception e) {
-			System.out.println("Error: " + e.getMessage());
-		}
-		return null;
+		return infactRecordRepository.findByRecordId(recordId);
 	}
 
 	@Override

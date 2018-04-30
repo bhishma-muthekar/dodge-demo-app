@@ -20,8 +20,8 @@ public class LoginController {
 	@PostMapping("/login")
 	private ResponseEntity<LoginSuccess> login(@RequestBody User user) {
 		LoginSuccess loginSuccess = new LoginSuccess();
-		User user2 = userRepository.findByUserNameNPassword(user.getUserName(), user.getPassword());
-		if (user2 == null) {
+		User userFromDb = userRepository.findByUserNameAndPassword(user.getUserName(), user.getPassword());
+		if (userFromDb == null) {
 			loginSuccess.setSuccess(false);
 			loginSuccess.setMessage("Invalid User");
 		} else {

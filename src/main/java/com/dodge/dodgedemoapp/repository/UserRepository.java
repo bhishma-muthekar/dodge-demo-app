@@ -7,8 +7,7 @@ import org.springframework.data.repository.query.Param;
 import com.dodge.dodgedemoapp.entity.User;
 
 public interface UserRepository extends JpaRepository<User, Long> {
-	
-	@Query("from User u where u.userName=:userName and u.password=:password")
-	public User findByUserNameNPassword(@Param("userName") String userName, @Param("password") String password);
+
+	public User findByUserNameAndPassword(String userName, String password);
 
 }
