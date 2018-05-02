@@ -43,6 +43,21 @@ public class InfactRecord implements Serializable {
 
 	@Column(name="date_created")
 	private Timestamp dateCreated;
+	
+	public InfactRecord() {
+		
+	}
+
+	public InfactRecord(String sourceId, String prefLabel,
+			String code, Timestamp lastUpdated, String version,
+			Timestamp dateCreated) {
+		this.sourceId = sourceId;
+		this.prefLabel = prefLabel;
+		this.code = code;
+		this.lastUpdated = lastUpdated;
+		this.version = version;
+		this.dateCreated = dateCreated;
+	}
 
 	public Long getRecordId() {
 		return recordId;

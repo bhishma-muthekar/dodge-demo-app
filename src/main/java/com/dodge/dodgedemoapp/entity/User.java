@@ -34,6 +34,16 @@ public class User implements Serializable{
 
 	@Column(name="user_role")
 	private String userRole;
+	
+	public User() {
+		
+	}
+
+	public User(String userName, String password, String userRole) {
+		this.userName = userName;
+		this.password = password;
+		this.userRole = userRole;
+	}
 
 	public Long getUserId() {
 		return userId;
