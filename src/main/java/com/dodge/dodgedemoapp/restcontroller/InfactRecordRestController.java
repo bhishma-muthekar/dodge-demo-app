@@ -22,6 +22,11 @@ public class InfactRecordRestController {
 
 	@Autowired
 	private InfactRecordServiceImpl infactRecordServiceImpl;
+	
+	@GetMapping("/index")
+	public String welcome() {
+		return "Welcome to Dodge";
+	}
 
 	@GetMapping("/infact-record")
 	private List<InfactRecord> list() {

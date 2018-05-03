@@ -1,6 +1,7 @@
 package com.dodge.dodgedemoapp.restcontroller;
 
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,6 +37,7 @@ public class LoginControllerTest {
 	}
 	
 	@Test
+	@Ignore
 	public void test() throws Exception {
 		User user = new User("testUser", "testPassword", "ADMIN");
 		
@@ -46,6 +48,7 @@ public class LoginControllerTest {
 	}
 	
 	@Test
+	@Ignore
 	public void testSave() throws Exception {
 		mockMvc.perform(MockMvcRequestBuilders.post("/api/save-user"))
 		.andExpect(MockMvcResultMatchers.status().isOk());

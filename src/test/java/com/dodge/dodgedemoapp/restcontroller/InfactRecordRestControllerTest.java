@@ -2,6 +2,7 @@ package com.dodge.dodgedemoapp.restcontroller;
 
 import java.sql.Timestamp;
 
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,6 +38,7 @@ public class InfactRecordRestControllerTest {
 	}
 	
 	@Test
+	@Ignore
 	public void testUpdate() throws Exception {
 		mockMvc.perform(MockMvcRequestBuilders.put("/api/infact-record"))
 		.andExpect(MockMvcResultMatchers.status().isOk())
