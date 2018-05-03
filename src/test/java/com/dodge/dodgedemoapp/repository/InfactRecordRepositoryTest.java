@@ -1,6 +1,6 @@
 package com.dodge.dodgedemoapp.repository;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import java.sql.Timestamp;
 
@@ -14,7 +14,6 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import com.dodge.dodgedemoapp.entity.InfactRecord;
-import com.dodge.dodgedemoapp.entity.User;
 
 @AutoConfigureTestDatabase(replace = Replace.NONE)
 @RunWith(SpringRunner.class)

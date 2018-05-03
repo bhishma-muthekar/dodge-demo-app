@@ -1,7 +1,5 @@
 package com.dodge.dodgedemoapp.restcontroller;
 
-import static org.junit.Assert.*;
-
 import java.sql.Timestamp;
 
 import org.junit.Test;
@@ -15,7 +13,6 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
 import com.dodge.dodgedemoapp.entity.InfactRecord;
-import com.dodge.dodgedemoapp.service.InfactRecordService;
 import com.dodge.dodgedemoapp.service.InfactRecordServiceImpl;
 
 @RunWith(SpringRunner.class)

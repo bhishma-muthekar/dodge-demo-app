@@ -24,14 +24,14 @@ public class InfactRecordRestController {
 	private InfactRecordServiceImpl infactRecordServiceImpl;
 
 	@GetMapping("/infact-record")
-	private ResponseEntity<List<InfactRecord>> list() {
+	private List<InfactRecord> list() {
 		List<InfactRecord> infactRecords = infactRecordServiceImpl.list();
-		return ResponseEntity.ok(infactRecords);
+		return infactRecords;
 	}
 
 	@GetMapping("/infact-record/{id}")
-	private ResponseEntity<InfactRecord> get(@PathVariable("id") Long id) {
-		return ResponseEntity.ok(infactRecordServiceImpl.get(id));
+	private InfactRecord get(@PathVariable("id") Long id) {
+		return infactRecordServiceImpl.get(id);
 	}
 
 	@PostMapping("/infact-record")

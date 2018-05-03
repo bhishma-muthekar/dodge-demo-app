@@ -1,6 +1,7 @@
 package com.dodge.dodgedemoapp.restcontroller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -17,8 +18,8 @@ public class LoginController {
 	@Autowired
 	private UserRepository userRepository;
 
-	@PostMapping("/login")
-	private ResponseEntity<LoginSuccess> login(@RequestBody User user) {
+	@PostMapping(value = "/login", consumes = MediaType.APPLICATION_JSON_VALUE)
+	public LoginSuccess login(@RequestBody User user) {
 		LoginSuccess loginSuccess = new LoginSuccess();
 		User userFromDb = userRepository.findByUserNameAndPassword(user.getUserName(), user.getPassword());
 		if (userFromDb == null) {
@@ -28,11 +29,11 @@ public class LoginController {
 			loginSuccess.setSuccess(true);
 			loginSuccess.setMessage("User logged in successful");
 		}
-		return ResponseEntity.ok(loginSuccess);
+		return loginSuccess;
 	}
 	
 	@PostMapping("/save-user")
-	private ResponseEntity<?> save(@RequestBody User user){
+	public ResponseEntity<?> save(@RequestBody User user){
 		userRepository.save(user);
 		
 		return ResponseEntity.ok().body(
