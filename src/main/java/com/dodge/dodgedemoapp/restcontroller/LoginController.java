@@ -1,5 +1,8 @@
 package com.dodge.dodgedemoapp.restcontroller;
 
+import java.net.URI;
+import java.net.URISyntaxException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -35,8 +38,15 @@ public class LoginController {
 	@PostMapping("/save-user")
 	public ResponseEntity<?> save(@RequestBody User user){
 		userRepository.save(user);
+		URI uri=null;
+		try {
+			uri = new URI("/api/save-user");
+		} catch (URISyntaxException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
-		return ResponseEntity.ok().body(
+		return ResponseEntity.created(uri).body(
 				"New User has been saved with ID: "
 						+ user.getUserName());
 	}
