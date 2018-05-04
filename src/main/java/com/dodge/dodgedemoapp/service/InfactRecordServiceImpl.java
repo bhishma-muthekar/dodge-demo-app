@@ -20,8 +20,9 @@ public class InfactRecordServiceImpl implements InfactRecordService {
 	}
 
 	@Override
-	public void save(InfactRecord infactRecord) {
+	public InfactRecord save(InfactRecord infactRecord) {
 		infactRecordRepository.save(infactRecord);
+		return infactRecord;
 	}
 
 	@Override

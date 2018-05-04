@@ -26,11 +26,12 @@ public class UserRepositoryTest {
 
 	@Test
 	public void testFindByUserNameAndPassword() {
-		User user = new User("testUser", "testPassword", "ADMIN");
+		User user = new User("testUser1", "testPassword", "ADMIN");
 		entityManager.persist(user);
 		
-		User fetchedUser = userRepository.findByUserNameAndPassword("testUser", "testPassword");
+		User fetchedUser = userRepository.findByUserNameAndPassword("testUser1", "testPassword");
 		assertEquals(user, fetchedUser);
+		userRepository.delete(fetchedUser);		
 	}
 
 }

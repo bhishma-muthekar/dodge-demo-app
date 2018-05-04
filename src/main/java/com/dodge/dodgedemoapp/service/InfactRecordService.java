@@ -8,7 +8,7 @@ public interface InfactRecordService {
 
 	public List<InfactRecord> list();
 
-	public void save(InfactRecord infactRecord);
+	public InfactRecord save(InfactRecord infactRecord);
 
 	public InfactRecord get(Long recordId);
 
